@@ -7,20 +7,29 @@ async function loadInitalPokemons(){
     renderPokemonListItem()
 }
 
-
 /**render */
 async function renderPokemonListItem() {
-
-    const response = await fetch('../../pokemon_results.json','utf-8');
+    const container = document.getElementById('pokedex-grid');
+    const response = await fetch('https://cdn.jsdelivr.net/gh/MegaChoi/Pokemon-dex/pokemon_data.json');
     const data = await response.json();
     
-    for(i = 0; i < data.length(); i++) {
-        document.getElementById('pokedex-grid').insertAdjacentHTML('beforeend', `<div onclick="openInfo(${data[i].id})" class="pokemon-render-result-container container center column">
-                                                                                                    <img class="search-pokemon-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${currentList[index].id}.png">
-                                                                                                    <span class="bold font-size-12">N° ${data[i].name}</span>
-                                                                                            
-                                                                                                </div>`);
+    for (let i = 0; i < data.length; i++) {
+        const type1 = data[i].types[0];
+        const type2 = data[i].types[1] ? data[i].types[1] : null;
+
+        container.insertAdjacentHTML('beforeend', 
+        `<div class="pokemon-card border-${type1}">
+            <div class="pokemon-image-wrapper"> 
+                <img class="pokemon-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data[i].id}.gif" alt="${data[i].name}">
+            </div>
+            <span class="pokemon-name">${data[i].name.toUpperCase()}</span>
+            <div class="icon"> 
+                <img src="/src/icons/${type1}.png" width="20" height="20">
+                ${type2 ? `<img src="/src/icons/${type2}.png" width="20" height="20">` : ''}
+            </div>
+        </div>`);
     }
+    
 };
 
 
