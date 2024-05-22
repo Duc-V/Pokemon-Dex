@@ -24,8 +24,8 @@ async function renderPokemonListItem() {
             </div>
             <span class="pokemon-name">${data[i].name.toUpperCase()}</span>
             <div class="icon"> 
-                <img src="/src/icons/${type1}.png" width="20" height="20">
-                ${type2 ? `<img src="/src/icons/${type2}.png" width="20" height="20">` : ''}
+                <img src="src/icons/${type1}.png" width="20" height="20">
+                ${type2 ? `<img src="src/icons/${type2}.png" width="20" height="20">` : ''}
             </div>
         </div>`);
     }
