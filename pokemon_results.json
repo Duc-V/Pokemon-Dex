@@ -3,24 +3,24 @@
         "id": 1,
         "name": "bulbasaur",
         "types": [
-            "poison",
-            "grass"
+            "grass",
+            "poison"
         ]
     },
     {
         "id": 2,
         "name": "ivysaur",
         "types": [
-            "poison",
-            "grass"
+            "grass",
+            "poison"
         ]
     },
     {
         "id": 3,
         "name": "venusaur",
         "types": [
-            "poison",
-            "grass"
+            "grass",
+            "poison"
         ]
     },
     {
@@ -41,8 +41,8 @@
         "id": 6,
         "name": "charizard",
         "types": [
-            "flying",
-            "fire"
+            "fire",
+            "flying"
         ]
     },
     {
@@ -84,8 +84,8 @@
         "id": 12,
         "name": "butterfree",
         "types": [
-            "flying",
-            "bug"
+            "bug",
+            "flying"
         ]
     },
     {
@@ -116,24 +116,24 @@
         "id": 16,
         "name": "pidgey",
         "types": [
-            "normal",
-            "flying"
+            "flying",
+            "normal"
         ]
     },
     {
         "id": 17,
         "name": "pidgeotto",
         "types": [
-            "normal",
-            "flying"
+            "flying",
+            "normal"
         ]
     },
     {
         "id": 18,
         "name": "pidgeot",
         "types": [
-            "normal",
-            "flying"
+            "flying",
+            "normal"
         ]
     },
     {
@@ -154,16 +154,16 @@
         "id": 21,
         "name": "spearow",
         "types": [
-            "normal",
-            "flying"
+            "flying",
+            "normal"
         ]
     },
     {
         "id": 22,
         "name": "fearow",
         "types": [
-            "normal",
-            "flying"
+            "flying",
+            "normal"
         ]
     },
     {
@@ -284,16 +284,16 @@
         "id": 39,
         "name": "jigglypuff",
         "types": [
-            "normal",
-            "fairy"
+            "fairy",
+            "normal"
         ]
     },
     {
         "id": 40,
         "name": "wigglytuff",
         "types": [
-            "normal",
-            "fairy"
+            "fairy",
+            "normal"
         ]
     },
     {
