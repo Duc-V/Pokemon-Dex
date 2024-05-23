@@ -16,10 +16,11 @@
 }
 
 .pokemon-image-wrapper {
+    height: 50%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .pokemon-image {
@@ -35,6 +36,11 @@
     position: absolute; /* Position the name absolutely */
     bottom: 0.5em; /* Align to the bottom */
     left: 0.5em; /* Align to the left */
+}
+
+.pokemon-id{
+    font-size: 35px;
+    opacity: 0.2;
 }
 
 .border-fire{

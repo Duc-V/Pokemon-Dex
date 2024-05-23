@@ -22,7 +22,10 @@ async function renderPokemonListItem() {
             <div class="pokemon-image-wrapper"> 
                 <img class="pokemon-image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data[i].id}.gif" alt="${data[i].name}">
             </div>
-            <span class="pokemon-name">${data[i].name.toUpperCase()}</span>
+            <div class="pokemon-name"> 
+                <span class="pokemon-id">N°${i+1} </span>
+                <div>${data[i].name.toUpperCase()}</div>
+            </div>
             <div class="icon"> 
                 <img src="src/icons/${type1}.png" width="20" height="20">
                 ${type2 ? `<img src="src/icons/${type2}.png" width="20" height="20">` : ''}
