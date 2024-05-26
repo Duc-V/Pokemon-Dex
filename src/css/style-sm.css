@@ -1,0 +1,68 @@
+/* CSS for the grid container and cards */
+@media (max-width: 1024px) {
+    .pokedex-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .pokemon-card {
+        position: relative;
+        width: 40%;
+        height: 8em;
+        margin: 0.2em;
+        border-radius: 0.3em;
+    }
+
+    .pokemon-image-wrapper {
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .pokemon-image {
+        image-rendering: pixelated;
+    }
+
+    .pokemon-name {
+        font-family: monospace;
+        display: block;
+        font-size: 1em;
+        font-weight: bold;
+        position: absolute; /* Position the name absolutely */
+        bottom: 0.5em; /* Align to the bottom */
+        left: 0.5em; /* Align to the left */
+    }
+
+    .pokemon-id{
+        font-size: 2em;
+        opacity: 0.2;
+    }
+
+    .icon{
+        display: block;
+        font-weight: bold;
+        position: absolute; /* Position the name absolutely */
+        bottom: 0.4em; /* Align to the bottom */
+        right: 0.5em; /* Align to the left */
+    }
+
+    .left-bar{
+        display: flex;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 10%;
+        background-color: rgb(0, 0, 0);
+        z-index: 1;
+    }
+    .left-bar span{
+        display: none;
+    }
+}
+
