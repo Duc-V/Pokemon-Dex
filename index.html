@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./src/javascript/resourceLoader.js"></script>
     <link rel="stylesheet" href='./src/css/style-lg.css'>
     <link rel="stylesheet" href='./src/css/style-sm.css'>
     <link rel="stylesheet" href='./src/css/decoration.css'>
+    <script src="src/javascript/loader.js"></script>
+    <script src="src/javascript/render.js"></script>
     <title>Document</title>
 </head>
-<body onload="loadInitalPokemons()">
+<body onload="init()">
     <div class="container">
         <div class="main">
                 <div class="left-bar">
@@ -17,18 +18,42 @@
                         <img src="src/icons/poke-ball.png" width="40">
                         <span>Pokemondex</span>
                     </div>
-
                 </div>
-                <div class="content">                    
-                    <div class="search-bar">
-                        <input id="search-input" onkeydown="search()" placeholder="Search your Pokemon">
-                        <!-- <div id="start-search-button" class="center">
-                            <i class="fas fa-search"></i>
-                        </div> -->
+                <div class="content">   
+                    
+                    <!-- top bar -->
+                    <div class="top-bar">
+                        <!-- search input -->
+                        <div class="search-bar">
+                            <input id="search-input" onkeydown="search()" placeholder="Search your Pokemon">
+                        </div>
+                        <!-- type select button -->
+                        <div class="search-select" >
+                            <select class="poke-types" onchange="addType(this.value)">
+                                <option value="fire">fire</option>
+                                <option value="water">water</option>
+                                <option value="flying">flying</option>
+                                <option value="bug">bug</option>
+                                <option value="grass">grass</option>
+                                <option value="poison">poison</option>
+                                <option value="normal">normal</option>
+                                <option value="electric">electric</option>
+                                <option value="fighting">fighting</option>
+                                <option value="psychic">psychic</option>
+                                <option value="ground">ground</option>
+                                <option value="ghost">ghost</option>
+                                <option value="steel">steel</option>
+                                <option value="ice">ice</option>
+                                <option value="fairy">fairy</option>
+                                <option value="dragon">dragon</option>
+                                <option value="dark">dark</option>
+                            </select>
+                            <div id="search-attributes"></div>
+                        </div>
                     </div>
+                    <!-- pokemon grid -->
                     <div id="pokedex-grid" class="pokedex-grid">
-
-                        <!--Render here-->
+                        <!-- render area -->
                     </div>
                 </div>
 
