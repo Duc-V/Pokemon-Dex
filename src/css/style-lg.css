@@ -1,34 +1,37 @@
 /* CSS for the grid container and cards */
 @media (min-width: 1025px) {
+    body{
+        overflow: hidden;
+    }
     .container{
         display: flex;
         justify-content: center;
-        background-color: black;
         font-family: monospace;
+
     }
     .main{
         height: 100vh;
-        width: 90%;
+        width: 100%;
         display: flex;
-        background-color: rgb(255, 255, 255);
+        background-color: (240, 243, 249);
         overflow: hidden;
     }
     .content{
         width: 60%;
         overflow-y: scroll;
         position: relative;
+        background-color: rgb(240, 243, 249);
     }
     .content::-webkit-scrollbar {
         display: none;
     }
     .top-bar {
-        background-color: rgb(51, 48, 48);
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 100%;
-        height: 10em;
+        height: 13em;
         position: sticky; /* Make the search bar sticky */
         top: 0; /* Stick to the top */
         z-index: 10; /* Ensure it stays above other content */
@@ -38,9 +41,11 @@
         background-color: white;
         width: 80%;
         height: 3em;
-        border-radius: 1em;
+        border-radius: 10px;
         overflow: hidden;
         display: flex;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19);
+        border: solid 3px rgba(92, 89, 89, 0.8);
     }
     .search-bar input{
         padding: 1em;
@@ -57,16 +62,19 @@
 
     }
     #search-attributes{
+        background-color: white;
+        border-radius: 1em;
         display: flex;
+        background-color: rgba(163, 158, 158, 0.8);
 
     }
     .search-select .poke-types{
-        margin-right: 1em;
-        background-color: rgb(255, 255, 255);
         text-align: center;
         width: 5em;
-        height: 2em;
-        border-radius: 1em;
+        height: 2.5em;
+        border-radius: 10px;
+        border: solid 3px rgba(92, 89, 89, 0.8);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19);
     }
 
     
@@ -74,10 +82,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(255, 255, 255);
-        margin-right: 1em;
-        width: 3em;
-        border-radius: 1em;
+        margin: 0.5em;
     }
 
     .remove-type {
@@ -87,8 +92,7 @@
     .poke-types-icon:hover .remove-type {
         display: block;
         position: absolute; /* or inline, flex, etc., depending on your needs */
-        font-size: 1.5em;
-
+        transform: translateY(2px);
     }
     .poke-types-icon:hover{
         opacity: 0.8;
@@ -98,17 +102,19 @@
     .pokedex-grid {
         display: flex;
         justify-content: center;
-        align-items: center;
         flex-wrap: wrap;
-        background-color: rgb(255, 255, 255);
+        /* min-height: 100vh; */
     }
     
     .pokemon-card {
         position: relative;
-        width: 25%;
+        flex: 1 1 30%; 
+        max-width: 25%; /* Ensures cards do not stretch too wide */
         height: 15em;
         margin: 1.2em;
         border-radius: 0.5em;
+        transition: transform 0.3s ease-in-out;
+        background-color: rgb(255, 255, 255);
     }
 
     .pokemon-image-wrapper {
@@ -144,11 +150,12 @@
         position: absolute; /* Position the name absolutely */
         bottom: 0.4em; /* Align to the bottom */
         right: 0.5em; /* Align to the left */
+        
     }
 
     .left-bar{
         width: 17%;
-        background-color: rgba(172, 169, 169, 0.9);
+        background-color: rgb(255, 255, 255);
     }
 
     .logo{
@@ -158,6 +165,31 @@
         justify-content: center;
         gap: 0.5em;
         margin-top:3em;
+    }
+
+    .right-bar{
+        width: 23%;
+        background-color:  rgb(255, 255, 255);
+    }
+
+
+    .pokemon-card:hover{
+        box-shadow: 5px 5px 5px grey;
+        transform: translateY(-1em);
+    }
+
+    @keyframes moveUp {
+        from {
+            top: 0px;
+        }
+        to {
+            top: 100px;
+        }
+    }
+
+
+    .poke-info{
+        height: 80%;
     }
 }
 

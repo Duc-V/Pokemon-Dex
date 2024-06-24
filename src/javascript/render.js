@@ -34,12 +34,10 @@ async function renderSearchAttributes(searchAttributes) {
         for (const type in searchAttributes) {
             const t = searchAttributes[type];
             htmlString += `<div class="poke-types-icon" onclick="removeType('${t}')">
-                <div class="remove-type" >X</div>
-                <img src="src/icons/${t}.png" width="20" height="20">
+                <div class="remove-type" ><img src="src/assets/delete_icon.png" width="30" height="30"></div>
+                <img src="src/icons/${t}.png" width="30" height="30">
             </div>`;
         }
-        
-        
         container.insertAdjacentHTML('beforeend', htmlString);
     } catch (error) {
         console.log(error);
