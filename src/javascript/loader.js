@@ -6,6 +6,14 @@ async function init(){
     await render(pokemons);
 }
 
+
+async function fetchPokemonById(id){
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+    const data = await response.json();
+    // console.log(data);
+    return data;
+}
+
 async function loadInitalPokemons() {
     const response = await fetch('https://cdn.jsdelivr.net/gh/MegaChoi/Pokemon-dex/pokemon_data.json');
     const data = await response.json();

@@ -72,3 +72,31 @@
     border: 3px solid #D685AD;
 }
 
+.hp {
+    background-color: #d7514c;
+    background-image: linear-gradient(90deg, #d7514c, #fba5a2);
+}
+
+.atk {
+    background-color: #EE8130;
+    background-image: linear-gradient(90deg, #EE8130, #ffb37f);
+}
+
+.def {
+    background-color: #F7D02C;
+    background-image: linear-gradient(90deg, #F7D02C, #ffe78a);
+}
+
+.spec-atk {
+    background-color: #6390F0;
+    background-image: linear-gradient(90deg, #6390F0, #9fc4ff);
+}
+
+
+.spec-def {
+    background: linear-gradient(90deg, #A6B91A, #D4E157);
+}
+
+.speed {
+    background: linear-gradient(90deg, #F95587, #FF80AB);
+}
