@@ -79,3 +79,35 @@ function filterPokemonByTypes(pokemonList, type1, type2 = null) {
 
 }
 
+async function getEvolutionChain(pokeId){
+    try {
+
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokeId}`);
+        const data = await response.json();
+        const evolutionChainUrl = data.evolution_chain.url;
+
+        let chain = [];
+        const response2 = await fetch(evolutionChainUrl);    
+        const evolutionData = await response2.json();
+
+        let evolutionChain= evolutionData.chain;
+        let poke = {}
+        while (evolutionChain) {
+            let poke = {
+              name: evolutionChain.species.name,
+              url: evolutionChain.species.url,
+              min_level: evolutionChain.evolution_details.length > 0 ? evolutionChain.evolution_details[0].min_level : null
+            };
+          
+            chain.push(poke);
+          
+            // Move to the next evolution if available
+            evolutionChain = evolutionChain.evolves_to.length > 0 ? evolutionChain.evolves_to[0] : null;
+          }
+        return evolutionChain;
+
+    } catch (error) {
+        
+    }
+}
+

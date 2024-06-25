@@ -46,7 +46,7 @@ async function renderSearchAttributes(searchAttributes) {
 
 async function displayPokemon(pokeId){
     try {
-
+        evolutionChain = await getEvolutionChain(pokeId);
         const pokemon = await fetchPokemonById(pokeId)
         console.log();
 
@@ -77,10 +77,13 @@ async function displayPokemon(pokeId){
         // type2 = pokemon.types[1]? pokemons.types[1].type.name : "";
         const container = document.getElementById('poke-info');
 
+
+
+
         container.innerHTML = "";
         container.insertAdjacentHTML('beforeend', 
         
-        
+
 
         `
         <div>
@@ -104,9 +107,13 @@ async function displayPokemon(pokeId){
             </span>
         </div>
         
-
+           
         <div class="stats-container">
-            <h3>Stats</h3>
+            <div class="stats-heading">
+                    <img width="20" height="20" src="src/icons/stats-icon.png" alt="">
+                <h3>Base Stats</h3> 
+                    
+            </div>
             <div class="stat">
                 <span class="stat-name">HP</span>
                 <div class="stat-bar-container">
