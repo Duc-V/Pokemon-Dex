@@ -93,7 +93,10 @@ async function getEvolutionChain(pokeId){
         let evolutionChain= evolutionData.chain;
         let poke = {}
         while (evolutionChain) {
+            let parts = evolutionChain.species.url.split('/');
+            let id = parts[parts.length - 2];
             let poke = {
+              id : id,
               name: evolutionChain.species.name,
               url: evolutionChain.species.url,
               min_level: evolutionChain.evolution_details.length > 0 ? evolutionChain.evolution_details[0].min_level : null
@@ -104,7 +107,8 @@ async function getEvolutionChain(pokeId){
             // Move to the next evolution if available
             evolutionChain = evolutionChain.evolves_to.length > 0 ? evolutionChain.evolves_to[0] : null;
           }
-        return evolutionChain;
+        console.log(chain);
+        return chain;
 
     } catch (error) {
         

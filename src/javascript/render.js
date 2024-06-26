@@ -44,12 +44,31 @@ async function renderSearchAttributes(searchAttributes) {
     }
 };
 
+async function displayEvolution(pokeId){
+    const container = document.getElementById('poke-info');
+    let html = `<div class="evolution-chain-wrapper">
+                <div class="evolution-heading"><img src="src/assets/evolution.png" width="30" height="30"><h3>Evolution</h3></div>
+                <div class='evolution-chain'>
+            `;
+    const evolutionChain = await getEvolutionChain(pokeId);
+    console.log(evolutionChain)
+    for (const pokemon of evolutionChain){
+        html += `
+            <span>lv${pokemon.min_level ? pokemon.min_level : "0"}</span>
+            <div onclick='displayPokemon(${pokemon.id})'>
+                <img src=${`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" >
+            </div>
+        `;
+    }
+    html += "</div></div>";
+
+    container.insertAdjacentHTML('beforeend', html);
+}
+
 async function displayPokemon(pokeId){
     try {
-        evolutionChain = await getEvolutionChain(pokeId);
-        const pokemon = await fetchPokemonById(pokeId)
-        console.log();
 
+        const pokemon = await fetchPokemonById(pokeId)
         let image = ''
         // get the gif if id < 650
         if (pokeId <= 650) {
@@ -158,6 +177,7 @@ async function displayPokemon(pokeId){
             </div>
         <div/>
         `);
+        displayEvolution(pokeId);
     }catch(error){
         console.log(error);
     }
