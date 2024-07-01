@@ -51,10 +51,6 @@
         right: 0.3em; /* Align to the left */
     }
 
-    .main{
-        position: relative;
-    }
-
     .left-bar{
         display: flex;
         align-items: center;
@@ -64,7 +60,7 @@
         width: 100%;
         height: 10%;
         background-color: rgb(0, 0, 0);
-        z-index: 1;
+        z-index: 11;
     }
     .left-bar span{
         display: none;
@@ -113,12 +109,30 @@
     }
 
 
-    .right-bar{
-        position: sticky;
-        /* height: 100vh; */
+    /* ------------------------------------ */
+    .right-bar {
+        position: fixed;
+        height: 90%;
         width: 100%;
-        bottom: 0; /* Align to the bottom */
-        left: 0; /* Align to the left */
+        top: -100vh; /* Initially hidden above the screen */
+        z-index: 11;
+        transition: top 1s ease-in-out; /* Transition for top */
+    }
+    
+    .right-bar.visible {
+        top: 0; /* Move into view */
+        left: 0;
+    }
+    
+    .right-bar.hidden {
+        top: 100vh; /* Hide above the screen */
+        left: 0;
+    }
+    
+
+    .pokemon-image-big{
+        image-rendering: pixelated;
+        transform: scale(2)
     }
 
     #search-attributes{
@@ -143,6 +157,153 @@
     .poke-types-icon:focus{
         opacity: 0.8;
         cursor: pointer;
+    }
+
+    .poke-info{
+        font-family: monospace;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .stats-container {
+        background-color: #f3f0f0;
+        width: 70%;
+        margin-left: 1em;
+        margin-right: 1em;
+        border-radius: 0.8em;
+        padding: 0.5em;
+    }
+    .stats-container h3{
+        margin: 0;
+    }
+
+    .stats-container .stats-heading{
+        gap: 0.6em;
+        padding: 0.6em;
+    }
+
+    .stat {
+        display: flex;
+        align-items: center;
+        /* margin-bottom: 2px; */
+    }
+    
+    .stat-name {
+        width: 4em;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .stat-bar-container {
+        flex-grow: 1;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 5px;
+        width: 10px;
+    }
+    
+    .stat-bar {
+        height: 100%;
+    }
+    
+    .stat-value {
+        width: 40px;
+        text-align: center;
+    }
+
+    .stats-heading{
+        display: flex;
+    }
+    .info-name{
+        margin-top: 1em;
+        text-align: center;
+        font-size: 4em;
+        font-family: monospace;
+        font-weight: bold;
+    }
+    .info-image-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%; 
+    }
+
+    .info-types {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        gap: 1em;
+    }
+    .info-types img{
+        width: 3em;   
+        height: 3em;
+    }
+
+    .info-name .id{
+        font-size: 0.5em;
+    }
+
+    .info-abilities {
+        width: 90%;
+        text-align: center;
+    }   
+    .info-abilities div{
+        display: inline-block;
+        width:25%;
+        padding: 0.8em;
+        margin: 0 0.5em;
+        border-radius: 11px;
+        background: green;
+    }
+
+    .evolution-chain{
+        width: 100%;
+        overflow: scroll;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .evolution-chain img{
+        image-rendering: pixelated;
+    }
+
+    .evolution-chain-wrapper{
+        /* margin-top: 2em; */
+        background-color: #f3f0f0;
+        width: 70%;
+        margin-left: 1em;
+        margin-right: 1em;
+        border-radius: 0.8em;
+        padding: 0.5em;
+    }
+    .evolution-chain img{
+        width: 6em;
+    }
+
+    .evolution-heading{
+        gap: 0.6em;
+        padding: 0.6em;
+        display: flex;
+        align-items: center; 
+    }
+
+    .evolution-heading h3{
+        margin: 0;
+    }
+    .evolution-chain span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: bold;
     }
 }
 

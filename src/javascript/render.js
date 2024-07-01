@@ -54,9 +54,9 @@ async function displayEvolution(pokeId){
     console.log(evolutionChain)
     for (const pokemon of evolutionChain){
         html += `
-            <span>lv${pokemon.min_level ? pokemon.min_level : "0"}</span>
             <div onclick='displayPokemon(${pokemon.id})'>
                 <img src=${`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png`} alt="" >
+                <span>lv${pokemon.min_level ? pokemon.min_level : "0"}</span>
             </div>
         `;
     }
@@ -96,13 +96,15 @@ async function displayPokemon(pokeId){
         // type2 = pokemon.types[1]? pokemons.types[1].type.name : "";
         const container = document.getElementById('poke-info');
 
-
-
-
+        
         container.innerHTML = "";
+
+
+
+
         container.insertAdjacentHTML('beforeend', 
         
-
+        
 
         `
         <div>
@@ -177,6 +179,16 @@ async function displayPokemon(pokeId){
             </div>
         <div/>
         `);
+        const rightBar = document.querySelector('.right-bar');
+
+        if (rightBar.classList.contains('hidden')) {
+            rightBar.classList.remove('hidden');
+            rightBar.classList.add('visible');
+        } else {
+            rightBar.classList.remove('visible');
+            rightBar.classList.add('hidden');
+        }
+
         displayEvolution(pokeId);
     }catch(error){
         console.log(error);
