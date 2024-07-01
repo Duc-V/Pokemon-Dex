@@ -47,7 +47,7 @@ async function renderSearchAttributes(searchAttributes) {
 async function displayEvolution(pokeId){
     const container = document.getElementById('poke-info');
     let html = `<div class="evolution-chain-wrapper">
-                <div class="evolution-heading"><img src="src/assets/evolution.png" width="30" height="30"><h3>Evolution</h3></div>
+                <div class="evolution-heading"><img src="src/assets/evolution.png" width="20" height="20"><h3>Evolution</h3></div>
                 <div class='evolution-chain'>
             `;
     const evolutionChain = await getEvolutionChain(pokeId);

@@ -209,7 +209,6 @@
     }
 
     .stats-container {
-        /* margin-top: 2em; */
         background-color: #f3f0f0;
         width: 85%;
         margin-left: 1em;
@@ -324,9 +323,10 @@
     }
 
     .evolution-heading{
+        gap: 0.6em;
+        padding: 0.6em;
         display: flex;
         align-items: center; 
-
     }
 
     .evolution-heading h3{
