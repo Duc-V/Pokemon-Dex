@@ -67,6 +67,7 @@ async function displayEvolution(pokeId){
 
 async function displayPokemon(pokeId){
     try {
+        slideIn();
 
         const pokemon = await fetchPokemonById(pokeId)
         let image = ''
@@ -100,6 +101,12 @@ async function displayPokemon(pokeId){
         container.innerHTML = "";
 
 
+        let type2HTML = '';
+        if (type2 !== "empty") {
+            type2HTML = `<span>
+                            <img class="" src="src/icons/${type2}.png" alt="">
+                        </span>`;
+        }
 
 
         container.insertAdjacentHTML('beforeend', 
@@ -107,6 +114,9 @@ async function displayPokemon(pokeId){
         
 
         `
+        <div class="close-button" onclick="slideIn()">
+            <img src="src/assets/delete_icon.png" width="40" height="40">
+        </div>
         <div>
             <div class="info-name">${name.toUpperCase()}
                <div class="id">N°${pokeId}</div>
@@ -117,15 +127,11 @@ async function displayPokemon(pokeId){
             <span>
                 <img class="" src="src/icons/${type1}.png" alt="">
             </span>
-            <span>
-                <img class="" src="src/icons/${type2}.png" alt="">
-            </span>
+            ${type2HTML}
         </div>
 
         <div class="info-image-wrapper"> 
-            <span>
-                <img class="pokemon-image-big" src="${image}" alt="">
-            </span>
+            <img class="pokemon-image-big" src="${image}" alt="">
         </div>
         
            
@@ -179,19 +185,38 @@ async function displayPokemon(pokeId){
             </div>
         <div/>
         `);
-        const rightBar = document.querySelector('.right-bar');
-
-        if (rightBar.classList.contains('hidden')) {
-            rightBar.classList.remove('hidden');
-            rightBar.classList.add('visible');
-        } else {
-            rightBar.classList.remove('visible');
-            rightBar.classList.add('hidden');
-        }
-
+        slideOut()
         displayEvolution(pokeId);
+
     }catch(error){
         console.log(error);
     }
 
+}
+async function loadingScreen(){
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.remove('loading-hide')
+    loadingScreen.classList.add('loading-unhide')
+}
+
+async function hideLoadingScreen(){
+    const loadingScreen = document.querySelector('.loading-screen');
+    loadingScreen.classList.remove('loading-unhide')
+    loadingScreen.classList.add('loading-hide')
+}
+
+
+function slideOut(){
+    loadingScreen();
+    const rightBar = document.querySelector('.right-bar');
+    rightBar.classList.remove('hidden');
+    rightBar.classList.add('visible');
+}
+
+function slideIn(){
+    hideLoadingScreen();
+
+    const rightBar = document.querySelector('.right-bar');
+    rightBar.classList.remove('visible');
+    rightBar.classList.add('hidden');
 }

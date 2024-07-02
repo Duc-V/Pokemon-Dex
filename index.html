@@ -12,6 +12,9 @@
 </head>
 <!--  -->
 <body onload="init()" >
+    <div class="loading-screen loading-hide">
+        <img src="src/assets/loading-icon.png" width="40" height="40">
+    </div>
     <div class="container">
         <div class="main">
                 <div class="left-bar">
@@ -25,8 +28,8 @@
                     <div class="top-bar">
                         <!-- search input -->
                         <div class="search-bar">
-                            <!-- onkeydown="search()" -->
-                            <input id="search-input"  placeholder="Search your Pokemon"> 
+                            <!-- -->
+                            <input id="search-input" onkeydown="search()"  placeholder="Search your Pokemon"> 
                         </div>
                         <!-- type select button -->
                         <div class="search-select" >

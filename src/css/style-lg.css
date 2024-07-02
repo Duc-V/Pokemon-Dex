@@ -92,7 +92,7 @@
     .poke-types-icon:hover .remove-type {
         display: block;
         position: absolute; /* or inline, flex, etc., depending on your needs */
-        transform: translateY(2px);
+        transform: translateY(1px);
     }
     .poke-types-icon:hover{
         opacity: 0.8;
@@ -319,7 +319,9 @@
         padding: 0.5em;
     }
     .evolution-chain div:hover img{
-        transform: scale(1.1)
+        transform: scale(1.1);
+        cursor: pointer;
+        
     }
 
     .evolution-heading{
@@ -338,6 +340,10 @@
         justify-content: center;
         text-align: center;
         font-weight: bold;
+    }
+
+    .close-button{
+        display: none;
     }
 }
 
