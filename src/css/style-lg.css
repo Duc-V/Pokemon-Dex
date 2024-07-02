@@ -345,5 +345,9 @@
     .close-button{
         display: none;
     }
+
+    .loading-screen{
+        display: none;
+    }
 }
 
