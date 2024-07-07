@@ -1,6 +1,6 @@
 <h1>Pokémon Dex</h1>
 
-&#128279; <a href="https://megachoi.github.io/Pokemon-Dex/">Click here to see the website ↗</a> 
+&#128279; <a href="https://duc-v.github.io/Pokemon-Dex/">Click here to see the website ↗</a> 
 <h2>Features</h2>
 <ul>
   <li>Pokémon info, including stats, types, abilities (to be updated), and evolutions.</li>
